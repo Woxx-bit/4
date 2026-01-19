@@ -1,0 +1,33 @@
+from tkinter import *
+
+
+def add_str():
+    e.insert(END, 'Привет')
+
+def del_str():
+    e.delete(0, END)
+
+def get_str():
+    lbl['text'] = e.get()
+
+root = Tk()
+root.title('Заголовок')
+root.geometry('300x300')
+root.resizable(0, 0)
+
+e = Entry(root, font=('Arial', 14))
+e.pack()
+
+e.insert(0, 'Место ')
+e.insert(END, 'ввода')
+
+Button(root, text='Добавить', font='Arial 15 bold', command=add_str).pack()
+Button(root, text=' Очистить', font='Arial 15 bold', command=del_str).pack()
+Button(root, text='Вывести', font='Arial 15 bold', command=get_str).pack()
+lbl = Label(root, font='Monotype 12', text='Место вывода')
+lbl.pack()
+
+
+
+
+root.mainloop()
